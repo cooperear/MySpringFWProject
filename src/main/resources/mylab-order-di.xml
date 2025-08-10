@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--  Product, ShoppingCart, OrderService -->
+<bean name="product1" class="mylab.order.di.xml.Product">
+	<property name="id" value = "A001"/>
+	<property name="name" value = "상품1_바나나"/>
+	<property name="price" value = "5000"/>
+</bean>
+
+<bean name="product2" class="mylab.order.di.xml.Product">
+	<constructor-arg value = "B002"/>
+	<constructor-arg value = "상품2_사과"/>
+	<constructor-arg value = "6000"/>
+</bean>
+
+
+
+<bean name="shoppingCart" class="mylab.order.di.xml.ShoppingCart"/>
+<bean name="orderService" class="mylab.order.di.xml.OrderService"/>
+
+
+
+</beans>
