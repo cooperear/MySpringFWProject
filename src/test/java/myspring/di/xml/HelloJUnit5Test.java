@@ -1,12 +1,19 @@
 package myspring.di.xml;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.junit.jupiter.api.BeforeEach;
 
 //Static import
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+@ExtendWith(SpringExtension.class)
+@ContextConfiguration(locations = "classpath:spring-beans.xml")
 
 public class HelloJUnit5Test {
 
@@ -17,6 +24,7 @@ public class HelloJUnit5Test {
 		// 1. container 객체 생성
 		context = new GenericXmlApplicationContext("classpath:spring-beans.xml");
 	}
+	
 
 	@Test
 	void helloBean() {
@@ -41,7 +49,8 @@ public class HelloJUnit5Test {
 		Printer printer = context.getBean("stringPrinter", Printer.class);
 
 		assertEquals("Hello 스프링", printer.toString());
-
 	}
+	
+	
 
 }
