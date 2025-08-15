@@ -17,8 +17,7 @@ public class NotificationConfig {
     }
 
     @Bean
-    public NotificationManager notificationManager(
-            EmailNotificationService emailService,
+    public NotificationManager notificationManager(EmailNotificationService emailService,
             SmsNotificationService smsService) {
         return new NotificationManager(emailService, smsService);
     }
